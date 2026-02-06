@@ -1,0 +1,40 @@
+﻿@page "/updateProduct/{Id:int}"
+
+
+<PageTitle>Update Product</PageTitle>
+<h3>UpdateProduct</h3>
+
+<EditForm Model="@productUpdated" OnValidSubmit="UpdateProductAction" FormName="ProductUpdateForm">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div>
+        <label class="form-label">Name</label>
+        <InputText @bind-Value="productUpdated.Name" class="form-control"  />
+    </div>
+
+    <div>
+        <label class="form-label">Description</label>
+        <InputText @bind-Value="productUpdated.Description" class="form-control" />
+    </div>
+
+    <div>
+        <label class="form-label">Price</label>
+        <InputNumber @bind-Value="productUpdated.Price" class="form-control" />
+    </div>
+
+    <div>
+        <label class="form-label">Image</label>
+        <InputText @bind-Value="productUpdated.ImageUrl" class="form-control"/>
+    </div>
+
+    <div>
+        <label class="form-label">Stock</label>
+        <InputNumber @bind-Value="productUpdated.stock" class="form-control"/>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Modifier</button>
+
+</EditForm>
+
+

@@ -1,4 +1,5 @@
 using Exo1Blazor.Components;
+using Exo1Blazor.Services;
 
 namespace Exo1Blazor
 {
@@ -7,6 +8,8 @@ namespace Exo1Blazor
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddScoped<ProductService>();
 
             // Add services to the container.
             builder.Services.AddRazorComponents()

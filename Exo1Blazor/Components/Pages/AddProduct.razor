@@ -1,0 +1,43 @@
+﻿@page "/addProduct"
+@using Microsoft.AspNetCore.Components.Forms
+
+<h3>AddProduct</h3>
+
+<EditForm Model="@newProduct" OnValidSubmit="AddNewProduct" FormName="AddProductForm">
+    <DataAnnotationsValidator />
+
+    <div>
+        @*Le label pour le nom*@
+        <label>Nom du produit</label>
+        @*Le bind-Value pour lié l'input a la propriété Name de newProduct*@
+         <InputText @bind-Value="@newProduct.Name" class="form-control" placeholder="Entrez le nom du produit" />
+        @*Le ValidationMessage pour afficher le message d'erreur du modele*@
+         <ValidationMessage For="@(() => newProduct.Name)"/>
+    </div>
+
+    <div>
+        <label>Description</label>
+        <InputText  @bind-Value="newProduct.Description" class="form-control" placeholder="Entrez la description"/>
+        <ValidationMessage For="@(() => newProduct.Description)" />
+    </div>
+
+    <div>
+        <label>Prix</label>
+        <InputNumber @bind-Value="@newProduct.Price" class="form-control" placeholder="Entrez le prix du produit" />
+    </div>
+
+    <div>
+        <label>Image</label>
+        <InputText @bind-Value="@newProduct.ImageUrl" class="form-control" placeholder="Entrez l'URL de l'image" />
+    </div>
+
+    <div>
+        <label>Stock</label>
+        <InputNumber @bind-Value="@newProduct.stock" class="form-control" placeholder="Entrez la description du produit" />
+        <ValidationMessage For="@(() => newProduct.stock)" />
+    </div>
+
+    <button type="submit" class="btn btn-primary" >Ajout du produit</button>
+
+   </EditForm>
+    

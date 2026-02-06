@@ -1,21 +1,30 @@
 ﻿using Exo1Blazor.Models;
+using Exo1Blazor.Services;
 using Microsoft.AspNetCore.Components;
 
 namespace Exo1Blazor.Components.Pages
 {
     public partial class Details
     {
+        [Inject]
+        private NavigationManager Navigation { get; set; }
+
+        [Inject]
+        public ProductService _productService { get; set; }
+
         [Parameter]
         public int Id { get; set; }
 
-        public Product product = new Product
+        public Product product = new Product();
+
+        protected override void OnInitialized()
         {
-            Id = 1,
-            Name = "Iphone 17",
-            Price = 1700.99,
-            Description = "The latest iPhone with advanced features.",
-            stock = 50,
-            ImageUrl = "/images/iphone.jpg"
-        };
+            product = _productService.GetProductById(Id);
+        }
+
+        public void NavigateToUpdate()
+        {
+            Navigation.NavigateTo($"/updateProduct/{Id}");
+        }
     }
 }
