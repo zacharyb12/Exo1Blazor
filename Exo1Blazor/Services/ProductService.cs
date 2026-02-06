@@ -42,10 +42,18 @@ namespace Exo1Blazor.Services
             return products.FirstOrDefault(p => p.Id == id);
         }
 
-        public void AddProduct(Product newProduct)
+        public void AddProduct(AddProduct newProduct)
         {
-            newProduct.Id = products.Max(p => p.Id) + 1;
-            products.Add(newProduct);
+            Product newProductToAdd = new Product
+            {
+                Name = newProduct.Name,
+                Description = newProduct.Description,
+                Price = newProduct.Price,
+                ImageUrl = newProduct.ImageUrl,
+                stock = newProduct.stock
+            };
+            newProductToAdd.Id = products.Max(p => p.Id) + 1;
+            products.Add(newProductToAdd);
         }
 
         public void UpdateProduct(Product updatedProduct)

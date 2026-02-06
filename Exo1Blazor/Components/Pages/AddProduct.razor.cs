@@ -13,7 +13,7 @@ namespace Exo1Blazor.Components.Pages
         private NavigationManager Navigation { get; set; }
 
         [SupplyParameterFromForm]
-        public Product newProduct { get; set; } = new();
+        public Models.AddProduct newProduct { get; set; } = new();
 
         private void AddNewProduct()
         {
