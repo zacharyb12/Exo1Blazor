@@ -1,0 +1,14 @@
+﻿@page "/details/{Id:int}"
+
+<NavLink href="/">Vers l'Accueil</NavLink>
+<h3>Details</h3>
+
+<p>@Id</p>
+
+<div class="card m-auto p-3 mt-3 w-50">
+    <h3>@product.Name</h3>
+    <p>@product.Price</p>
+    <p>@product.stock</p>
+    <img src="@product.ImageUrl" width="400" alt="Alternate Text" />
+</div>
+

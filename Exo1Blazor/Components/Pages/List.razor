@@ -1,0 +1,19 @@
+﻿@page "/list"
+
+@using Exo1Blazor.Models
+
+<PageTitle>List des produits</PageTitle>
+
+<h3>List</h3>
+
+@foreach(Product product in products)
+{
+    <div class="card m-auto p-3 mt-3 w-50">
+        <h3>@product.Name</h3>
+        <p>@product.Price</p>
+        <p>@product.stock</p>
+        <img src="@product.ImageUrl" width="400" alt="Alternate Text" />
+        <button class="btn btn-primary" @onclick="() => NavigateToDetails(product.Id)">Details</button>
+    </div>
+}
+
