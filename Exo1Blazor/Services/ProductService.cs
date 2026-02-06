@@ -67,5 +67,14 @@ namespace Exo1Blazor.Services
                 products.Add(updatedProduct);
             }
         }
+
+        public void DeleteProduct(int id)
+        {
+            Product productToDelete = GetProductById(id);
+            if (productToDelete != null)
+            {
+                products.Remove(productToDelete);
+            }
+        }
     }
 }

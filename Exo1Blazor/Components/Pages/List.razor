@@ -4,8 +4,10 @@
 
 <PageTitle>List des produits</PageTitle>
 
-<h3>List</h3>
-<buttton class="btn btn-outline-info" @onclick="() => NavigateToAdd()">Ajouter un produit</buttton>
+<h1 class="text-center mt-5">List</h1>
+<div class="w-100 text-center mt-5 mb-5">
+    <button class="btn btn-outline-info m-auto" @onclick="() => NavigateToAdd()">Ajouter un produit</button>
+</div>
 
 @if(products.Count == 0)
 {
@@ -14,16 +16,21 @@
 else
 {
     
+    <div class="d-flex">
 
     @foreach(Product product in products)
     {
-        <div class="card m-auto p-3 mt-3 w-50">
-            <h3>@product.Name</h3>
-            <p>@product.Price</p>
-            <p>@product.stock</p>
-            <img src="@product.ImageUrl" width="400" alt="Alternate Text" />
-            <button class="btn btn-primary" @onclick="() => NavigateToDetails(product.Id)">Details</button>
+        <div class="card rounded p-3 m-3 w-50 h-50">
+            <h3 class="text-center">@product.Name</h3>
+            <p class="fw-bold">@product.Price €</p>
+            <img src="@product.ImageUrl" width="400" height="400" alt="Alternate Text" />
+            <div class="d-flex justify-content-evenly">
+                    <p>Stock :@product.stock</p>
+                    <p>Id :@product.Id</p>
+            </div>
+            <button class="btn btn-outline-primary" @onclick="() => NavigateToDetails(product.Id)">Details</button>
         </div>
     }
+    </div>
 
 }

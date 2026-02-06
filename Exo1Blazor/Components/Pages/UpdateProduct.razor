@@ -4,37 +4,39 @@
 <PageTitle>Update Product</PageTitle>
 <h3>UpdateProduct</h3>
 
-<EditForm Model="@productUpdated" OnValidSubmit="UpdateProductAction" FormName="ProductUpdateForm">
+<EditForm class="w-50 m-auto border p-3" Model="@productUpdated" OnValidSubmit="UpdateProductAction" FormName="ProductUpdateForm">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
-    <div>
+    <div class="p-3 text-center">
         <label class="form-label">Name</label>
-        <InputText @bind-Value="productUpdated.Name" class="form-control"  />
+        <InputText @bind-Value="productUpdated.Name" class="form-control w-75 m-auto" />
     </div>
 
-    <div>
+    <div class="p-3 text-center">
         <label class="form-label">Description</label>
-        <InputText @bind-Value="productUpdated.Description" class="form-control" />
+        <InputText @bind-Value="productUpdated.Description" class="form-control  w-75 m-auto" />
     </div>
 
-    <div>
+    <div class="p-3 text-center">
         <label class="form-label">Price</label>
-        <InputNumber @bind-Value="productUpdated.Price" class="form-control" />
+        <InputNumber @bind-Value="productUpdated.Price" class="form-control  w-75 m-auto" />
     </div>
 
-    <div>
+    <div class="p-3 text-center">
         <label class="form-label">Image</label>
-        <InputText @bind-Value="productUpdated.ImageUrl" class="form-control"/>
+        <InputText @bind-Value="productUpdated.ImageUrl" class="form-control  w-75 m-auto" />
     </div>
 
-    <div>
+    <div class="p-3 text-center">
         <label class="form-label">Stock</label>
-        <InputNumber @bind-Value="productUpdated.stock" class="form-control"/>
+        <InputNumber @bind-Value="productUpdated.stock" class="form-control  w-75 m-auto" />
     </div>
 
-    <button type="submit" class="btn btn-primary">Modifier</button>
-
+    <div class="text-center p-3">
+        <button type="submit" class="btn btn-outline-primary">Modifier</button>
+        <button @onclick="() => DeleteProduct()" class="btn btn-outline-danger">Supprimer</button>
+    </div>
 </EditForm>
 
 

@@ -1,14 +1,17 @@
 ﻿@page "/details/{Id:int}"
 
 <NavLink href="/">Vers l'Accueil</NavLink>
-<h3>Details</h3>
+<h1 class="mt-5 mb-5 text-center">Details</h1>
 
 
-<div class="card m-auto p-3 mt-3 w-50">
-    <h3>@product.Name</h3>
-    <p>@product.Price</p>
-    <p>@product.stock</p>
-    <img src="@product.ImageUrl" width="400" alt="Alternate Text" />
-    <button @onclick="() => NavigateToUpdate()">Modifier le produit</button>
+
+<div class="card rounded p-3 m-auto w-50 h-50">
+    <h2 class="text-center p-3">@product.Name</h2>
+    <p class="fw-bold">@product.Price €</p>
+    <img src="@product.ImageUrl" width="400" height="400" class="m-auto" alt="Alternate Text" />
+    <div class="d-flex justify-content-evenly">
+        <p>Stock :@product.stock</p>
+        <p>Id :@product.Id</p>
+    </div>
+    <button class="btn btn-outline-primary" @onclick="() => NavigateToUpdate()">Modifier le produit</button>
 </div>
-

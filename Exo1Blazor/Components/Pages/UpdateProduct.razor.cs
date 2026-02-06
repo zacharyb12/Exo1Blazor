@@ -31,5 +31,11 @@ namespace Exo1Blazor.Components.Pages
             Navigation.NavigateTo("List");
         }
 
+        public void DeleteProduct()
+        {
+            _productService.DeleteProduct(Id);
+            Navigation.NavigateTo("List");
+        }
+
     }
 }
