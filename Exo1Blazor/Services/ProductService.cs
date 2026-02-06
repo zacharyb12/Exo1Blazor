@@ -29,6 +29,15 @@ namespace Exo1Blazor.Services
                 Description = "Google's flagship phone with excellent camera quality.",
                 stock = 20,
                 ImageUrl = "/images/googlePixel.jpg"
+            },
+            new Product
+            {
+                Id = 4,
+                Name = "OnePlus 9 Pro",
+                Price = 899.99,
+                Description = "A high-performance phone with a sleek design.",
+                stock = 15,
+                ImageUrl = "/images/googlePixel.jpg"
             }
         };
 
